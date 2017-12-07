@@ -1,16 +1,19 @@
 package lankydan.tutorial.mongodb.documents;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.data.annotation.Id;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 @Setter
 @ToString(exclude = {"id", "dateOfBirth"})
+@Document(collection = "people")
 public class Person {
 
   @Id private String id;
